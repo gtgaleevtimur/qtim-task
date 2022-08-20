@@ -1,0 +1,46 @@
+POST http://localhost:8080/detect HTTP/1.1
+content-type: application/json
+
+{"str":"Hello world!","char":"o"}
+
+# 200 (OK) {"count":"2"}
+
+###
+
+POST http://localhost:8080/detect HTTP/1.1
+content-type: application/json
+
+{"str":"ABRahadabubra","char":"D"}
+
+# 200 (OK) {"count":"1"}
+
+###
+
+POST http://localhost:8080/detect HTTP/1.1
+content-type: application/json
+
+{"str":"Ivan","char":"a"}
+
+# 200 (OK) {"count":"1"}
+
+###
+
+POST http://localhost:8080/detect HTTP/1.1
+content-type: application/json
+
+{"str":"Ivan","char":2}
+
+# 400 (Bad Request)
+
+
+###
+
+GET http://localhost:8080/detect HTTP/1.1
+content-type: application/json
+
+{"str":"Hello World","char":"o"}
+
+# 400 (Bad Request)
+
+
+###
